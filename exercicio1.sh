@@ -1,18 +1,18 @@
-#script que recebe dois números e retorna a soma dos dois e o maior número
+#!/bin/bash
+#receba dois números como parametro e como resultado exiba as informações:
+# - O maior número
+# - o somatório
 
+echo "Os Valores passados são: $1 e $2"
 
-echo "Digite um numero"
-  read num1
- echo "Digite outro numero"
-  read num2
-if [ $num1 -gt $num2 ]
+if [ $1 -gt $2 ]
   then
-  echo "O maior numero é $num1"
-elif [ $num2 -gt $num1 ]
+  echo "O maior numero é $1"
+elif [ $2 -gt $1 ]
   then
-  echo "O maior numero é $num2"
+  echo "O maior numero é $2"
 else
   echo "Os numeros são iguais" 
 fi
-resultado=$[num1+num2]
+resultado=$[$1+$2]
 echo "A soma dos dois números é $resultado"
