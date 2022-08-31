@@ -1,12 +1,18 @@
 #!/bin/bash
 
 #recebe o caminho de um diretóriio e listar o conteúdo um a um. se for diretorio, escrever "(dir)" ao lado do diretorio.
+echo "Digite o diretorio"
+read dir
 
-dir=$1
 
-[ ! -d "$dir" ] && echo "dir n existe pow" && exit
+if [ -d "$dir" ] 
+then
 
 for bagulho in $(ls $dir)
 do 
-  echo "$bagulho $([ -d $bagulho ] && echo "(dir)")"
+
+  echo "$bagulho $([ -d $dir/$bagulho ] && echo "(dir)")"
 done
+else
+ echo "Não existe" && exit
+fi
